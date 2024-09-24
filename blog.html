@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Donate Bangladesh</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="index.js" defer></script>
+  </head>
+  <body class="bg-base-200">
+    <nav class="sticky top-0 z-20">
+      <div class="backdrop-blur-sm">
+        <div class="navbar bg-base-100">
+          <div class="navbar-start md:px-4">
+            <a
+              href="./index.html"
+              class="btn btn-success text-xl text-white max-sm:text-sm"
+              >Donate</a
+            >
+          </div>
+          <div class="navbar-center">
+            <header>
+              <a
+                href="./index.html"
+                class="btn btn-ghost text-xl text-white max-sm:text-sm"
+                ><img src="assets/logo.png" alt="logo" class="w-1/6" /> Donate
+                Bangladesh</a
+              >
+            </header>
+          </div>
+          <div class="navbar-end">
+            <button class="btn btn-ghost text-slate text-lg">
+              <img src="assets/coin.png" alt="coin" class="w-6" />
+              <span id="current-balance">80,000</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="px-4 flex-col flex gap-4">
+      <div class="inline-block bg-slate-700 rounded-lg p-4 px-6">
+        <h2 class="font-bold text-xl">
+          What is the Document Object Model (DOM)?
+        </h2>
+        <p class="pt-3">
+          The Document Object Model (DOM) is a programming interface for web
+          documents. It represents the page so that programs can change the
+          document structure, style, and content. The DOM represents the
+          document as nodes and objects; that way, programming languages can
+          interact with the page. <br />
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
+            class="text-red-100"
+            ><u>Read more here</u></a
+          >
+        </p>
+      </div>
+      <div class="inline-block bg-slate-700 rounded-lg p-4 px-6 w-full">
+        <h2 class="font-bold text-xl">
+          How do you select an element from the DOM?
+        </h2>
+        <p class="pt-3">
+          <strong>Select by ID</strong><br />
+          <em>document.getElementById('myDiv');</em> <br /><br />
+          <strong>Select by class name</strong><br />
+          <em>document.getElementsByClassName('myClass');</em> <br /><br />
+          <strong>Select by tag name</strong> <br />
+          <em>document.getElementsByTagName('p');</em> <br /><br />
+          <strong>Select by query selector</strong> <br /><em
+            >document.querySelector('p');</em
+          >
+          <br /><br />
+          <strong>Select by query selector all</strong><br /><em
+            >document.querySelectorAll('p');</em
+          >
+          <br />
+          <a
+            href="https://www.w3schools.com/jsref/dom_obj_select.asp"
+            class="text-red-100"
+            ><u>Read more here</u></a
+          >
+        </p>
+      </div>
+      <div class="inline-block bg-slate-700 rounded-lg p-4 px-6">
+        <h2 class="font-bold text-xl">
+          What is event delegation in the context of the DOM, and why is it
+          useful?
+        </h2>
+        <p class="pt-3">
+          <strong>Event Delegation</strong> in the <em>DOM</em> refers to the
+          technique of attaching an event listener to a parent element instead
+          of directly to each child element. This allows you to handle events
+          for multiple child elements efficiently without having to add
+          individual event listeners to each one. <br /><br /><br />
+          <strong>Why is it useful?</strong> <br /><br /><strong
+            >Improved Performance</strong
+          >: When working with dynamic content or large numbers of elements,
+          event delegation can significantly improve performance. By attaching a
+          single event listener to a parent element, you reduce the number of
+          event listeners that need to be created and managed, leading to faster
+          page load times and better responsiveness. <br />
+          <strong>Simplified Code</strong>: Event delegation can make your code
+          more concise and easier to maintain. Instead of writing separate event
+          listeners for each child element, you can handle all events for a
+          group of elements in a single place. This reduces code duplication and
+          makes it easier to modify event handlers in the future. <br />
+          <strong>Dynamic Content</strong>: Event delegation is particularly
+          useful when dealing with dynamically generated content. You can attach
+          an event listener to a parent element once, and it will automatically
+          handle events for any child elements that are added to the DOM later.
+          <br />
+        </p>
+      </div>
+      <div class="inline-block bg-slate-700 rounded-lg p-4 px-6">
+        <h2 class="font-bold text-xl">
+          How do you manipulate an element's attributes and styles using the
+          DOM?
+        </h2>
+        <p class="pt-3">
+          To access and modify an element's attributes using the DOM, you can
+          use the following properties:
+          <br /><br />
+          <strong>getAttribute(attributeName)</strong>: Retrieves the value of
+          the specified attribute.
+          <br>
+          <strong>setAttribute(attributeName, attributeValue)</strong>: Sets the
+          value of the specified attribute.
+          <br>
+          <strong>removeAttribute(attributeName)</strong>: Removes the specified
+          attribute from the element. <br />
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
