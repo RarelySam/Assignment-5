@@ -11,17 +11,20 @@
       rel="stylesheet"
       type="text/css"
     />
+    <script src="index.js" defer></script>
   </head>
   <body class="bg-base-200">
     <nav class="sticky top-0 z-20">
       <div class="backdrop-blur-sm">
         <div class="navbar bg-base-100">
-          <div class="navbar-start">
-            <a class="btn btn-success text-xl text-white">Blog</a>
+          <div class="navbar-start md:px-4">
+            <a class="btn btn-success text-xl text-white max-sm:text-sm"
+              >Blog</a
+            >
           </div>
           <div class="navbar-center">
             <header>
-              <a class="btn btn-ghost text-xl text-white"
+              <a class="btn btn-ghost text-xl text-white max-sm:text-sm"
                 ><img src="assets/logo.png" alt="logo" class="w-1/6" /> Donate
                 Bangladesh</a
               >
@@ -29,7 +32,8 @@
           </div>
           <div class="navbar-end">
             <button class="btn btn-ghost text-slate text-lg">
-              <img src="assets/coin.png" alt="coin" class="w-3/12" /> 15,000
+              <img src="assets/coin.png" alt="coin" class="w-6" />
+              <span id="current-balance">80,000</span>
             </button>
           </div>
         </div>
@@ -38,13 +42,18 @@
     <main>
       <section>
         <div class="bg-base-200 justify-center items-center flex my-4 gap-4">
-          <button class="btn btn-active bg-green-500 text-white">
+          <button
+            class="btn btn-active bg-green-500 text-white"
+            id="enable-donation"
+          >
             Donation
           </button>
-          <button class="btn btn-outline">History</button>
+          <button class="btn btn-outline text-white" id="enable-history">
+            History
+          </button>
         </div>
       </section>
-      <section>
+      <section id="noakhali">
         <div class="hero bg-base-200">
           <div class="hero-content flex-col lg:flex-row">
             <img
@@ -53,9 +62,9 @@
             />
             <div class="flex flex-col">
               <div>
-                <div class="p-3 rounded-lg bg-slate-800 inline-block">
+                <div class="p-3 rounded-lg bg-slate-800 inline-block font-bold">
                   <img src="assets/coin.png" alt="coin" class="inline mr-1" />
-                  500 BDT
+                  <span id="donated-noakhali">500</span> BDT
                 </div>
               </div>
               <h1 class="text-3xl font-bold">
@@ -73,43 +82,133 @@
                 type="text"
                 placeholder="Donation Amount"
                 class="input input-bordered w-full my-2"
+                id="amount-noakhali"
               />
-              <button class="btn btn-primary bg-yellow-300 border-none">Donate now</button>
+              <button
+                class="btn btn-primary bg-yellow-300 border-none"
+                id="donate-noakhali"
+              >
+                Donate now
+              </button>
             </div>
           </div>
         </div>
+      </section>
+      <section id="feni">
         <div class="hero bg-base-200">
           <div class="hero-content flex-col lg:flex-row">
             <img src="assets/feni.png" class="max-w-sm rounded-lg shadow-2xl" />
-            <div>
-              <h1 class="text-5xl font-bold">Box Office News!</h1>
-              <p class="py-6">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                assumenda excepturi exercitationem quasi. In deleniti eaque aut
-                repudiandae et a id nisi.
+            <div class="flex flex-col">
+              <div>
+                <div class="p-3 rounded-lg bg-slate-800 inline-block font-bold">
+                  <img src="assets/coin.png" alt="coin" class="inline mr-1" />
+                  <span id="donated-feni">1,000</span> BDT
+                </div>
+              </div>
+              <h1 class="text-3xl font-bold">
+                Donate for Flood Relief in Feni, Bangladesh
+              </h1>
+              <p class="py-2">
+                The recent floods in Feni have devastated local communities,
+                leading to severe disruption and loss. Your generous donation
+                will help provide immediate aid, including food, clean water,
+                and medical supplies, to those affected by this calamity.
+                Together, we can offer crucial support and help rebuild lives in
+                the aftermath of this disaster. Every contribution counts
+                towards making a real difference. Please consider donating today
+                to assist those in urgent need.
               </p>
-              <button class="btn btn-primary">Get Started</button>
+              <input
+                type="text"
+                placeholder="Donation Amount"
+                class="input input-bordered w-full my-2"
+                id="amount-feni"
+              />
+              <button
+                class="btn btn-primary bg-yellow-300 border-none"
+                id="donate-feni"
+              >
+                Donate now
+              </button>
             </div>
           </div>
         </div>
+      </section>
+      <section id="protest">
         <div class="hero bg-base-200">
           <div class="hero-content flex-col lg:flex-row">
             <img
               src="assets/quota-protest.png"
               class="max-w-sm rounded-lg shadow-2xl"
             />
-            <div>
-              <h1 class="text-5xl font-bold">Box Office News!</h1>
-              <p class="py-6">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                assumenda excepturi exercitationem quasi. In deleniti eaque aut
-                repudiandae et a id nisi.
+            <div class="flex flex-col">
+              <div>
+                <div class="p-3 rounded-lg bg-slate-800 inline-block font-bold">
+                  <img src="assets/coin.png" alt="coin" class="inline mr-1" />
+                  <span id="donated-protest">1,500</span> BDT
+                </div>
+              </div>
+              <h1 class="text-3xl font-bold">
+                Aid for Injured in the Quota Movement
+              </h1>
+              <p class="py-2">
+                The recent Quota movement has resulted in numerous injuries and
+                significant hardship for many individuals. Your support is
+                crucial in providing medical assistance, rehabilitation, and
+                necessary supplies to those affected. By contributing, you help
+                ensure that injured individuals receive the care and support
+                they need during this challenging time. Every donation plays a
+                vital role in alleviating their suffering and aiding in their
+                recovery. Please consider making a donation to support these
+                brave individuals in their time of need.
               </p>
-              <button class="btn btn-primary">Get Started</button>
+              <input
+                type="text"
+                placeholder="Donation Amount"
+                class="input input-bordered w-full my-2"
+                id="amount-protest"
+              />
+              <button
+                class="btn btn-primary bg-yellow-300 border-none"
+                id="donate-protest"
+              >
+                Donate now
+              </button>
             </div>
           </div>
         </div>
       </section>
+      <section class="px-4 md:px-40 flex flex-col-reverse gap-4 hidden" id="history">
+      </section>
     </main>
+    <dialog id="successful-modal" class="modal">
+      <div class="modal-box flex flex-col justify-center items-center">
+        <svg
+        class="w-12 h-12 mb-1"
+          fill="#4BB543"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          data-darkreader-inline-fill=""
+          style="--darkreader-inline-fill: #000000"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5.676,8.237-6,5.5a1,1,0,0,1-1.383-.03l-3-3a1,1,0,1,1,1.414-1.414l2.323,2.323,5.294-4.853a1,1,0,1,1,1.352,1.474Z"
+            ></path>
+          </g>
+        </svg>
+        <h3 class="text-lg font-bold">Donation Successful!</h3>
+        <p class="py-2">Your donation is much appreciated!</p>
+        <form method="dialog">
+          <button class="btn">Close</button>
+        </form>
+      </div>
+    </dialog>
   </body>
 </html>
