@@ -48,7 +48,7 @@ function bindDonateClick(sectionName) /*Shared function*/ {
         const donationAmount = parseInt(
           document.getElementById("amount-" + sectionName).value
         );
-        if (isNaN(donationAmount) == false) {
+        if (isNaN(donationAmount) == false && donationAmount > 0) {
           if (donationAmount <= currentBalance) {
             updateDonatedAmount(sectionName, donationAmount);
             uploadHistory(sectionName, donationAmount)
@@ -61,6 +61,8 @@ function bindDonateClick(sectionName) /*Shared function*/ {
           document.getElementById("amount-" + sectionName).value == ""
         ) {
           alert("Please enter a donation amount");
+        } else if (donationAmount <= 0){
+          alert("Please enter a positive amount and a number greater than 0")
         } else {
           alert("Please enter a valid amount (number)");
         }
